@@ -1,0 +1,178 @@
+List of all actions
+
+format is as follows
+
+- action name
+component called from
+things it shold do
+works as expected (y/n), if no, followed by reason it is failing
+
+App start up:
+
+- initial page load
+App
+Show login page if no authenticated user. If user, show exercise list
+y
+
+Auth:
+
+- show register
+Login
+swith auth form from login to register when toggle button is clicked
+y
+
+- show login
+Register
+swith auth form from register to login when toggle button is clicked
+y
+
+- get user
+App
+Fetch from server the currently logged in user, if any. Show login form if no user, show workouts list if user.
+y
+
+- login
+Login
+Attempt to log the user in. If successful, show workout list. If not, show an error.
+y
+
+- register
+Register
+Attempt to register a new user. If successful display login form. If not, show an error.
+y
+
+- logout
+AppNavbar
+Log the current user out and display login form.
+y
+
+Workouts:
+
+- get workouts
+Content
+Fetch from server a list of all workouts for currently logged in user.
+y
+
+- new workout
+NewWorkoutModal
+Create a new workout for currently logged in user and immediately display it after the modal closes.
+y
+
+- edit workout
+EditWorkoutModal
+Edit an existing workout and display changes on workout details page after the modal closes.
+y
+
+- delete workout
+ConfirmDeleteModal
+Delete an existing workout and immediately remove it from displayed list after modal closes.
+y
+
+- add to workout
+AddToWorkout
+Add a workout exercise to the workout and immediately display it on that workout's exercises list after modal closes.
+y
+
+- edit workout exercise
+EditWorkoutExerciseModal
+Edit workout exercise and immediately show changes to that workout exercise after modal is closed.
+y
+
+- remove workout exercise
+WorkoutExercise
+Remove workout exercise from that workout and remove it from list immediately when modal closes.
+y
+
+Exercises:
+
+- get exercises
+Content
+Fetch from server a list of exercises for the current user, displaying them in the exercise list.
+y
+
+- new exercise
+NewExerciseModal
+Create a new exercise for current user, and display it on exercise list immediately after modal closes.
+y
+
+- edit exercise
+EditExerciseModal
+Edit an existing exercise and show changes immediately on exercise list after modal closes.
+y
+
+- delete exercise
+ConfirmDeleteModal
+Delete an exercise and remove it from list of exercises immediately after modal closes. Must also be deleted from any workouts that it has been added to.
+y
+
+Display:
+
+- hide modal new
+NewWorkoutModal, NewExerciseModal
+Close new workout or new exercise modals when the cancel button is clicked.
+y
+
+- show modal new
+AddButtons
+Show new workout and new exercise modals as their respective buttons are clicked.
+y
+
+- show delete modal
+Exercise, Workout
+Show confirm delete modal and add the id of the relevant workout or exercise to the "deletable" property of details state.
+y
+
+- show add to workout
+Workout
+Show add to workout modal and add id of the relevant workout to "workoutToAddTo" property of details state.
+y
+
+- show edit workout
+WorkoutDetails
+Show edit workout modal and add the full object of the relevant workout to "workoutToEdit" property of details state.
+y
+
+- show edit workout exercise
+WorkoutDetails
+Show edit workout exercise modal and add the full object of the relevant workout exercise to "workoutExerciseToEdit" property of details state.
+y
+
+- show edit exercise
+Exercise
+Show edit exercise modal and add full object of the relevant exercise to "exerciseToEdit" property of details state.
+y
+
+- view workout
+Workout
+Change view to display the workout details component and also set "workoutBeingViewed" property of display state to the current workout.
+y
+
+- back to dashboard
+WorkoutEdtails
+Clear the "workoutBeingViewed" property of the details state and change the view back to workout list.
+y
+
+- display workouts
+AddButtons
+Change the view from exercise list to workout list when the toggle button is clicked.
+y
+
+- display exercises
+AddButtons
+Change the view from workout list to exercise list when the toggle button is clicked.
+y
+
+- close modal
+AddToWorkout, ConfirmDeleteModal, EditExerciseModal
+Close either add to workout, confirm delete and edit exercise modals, reseting most of the details state properties too.
+y
+
+- close edit workout modal
+EditWorkoutModal
+Close the edit workout modal, making sure the "workoutBeingViewed" property of details state stays the same.
+y
+
+- close edit workout exercise modal
+EditWorkoutExerciseModal
+Close the edit workout exercise modal and reset the "workoutExerciseToEdit" property of the details state.
+y
